@@ -1,0 +1,14 @@
+div.clear-top {
+    margin-top:15px;
+}
+div.clear-bottom {
+    margin-bottom:15px;
+}
+input[readonly] {
+  background-color: white !important;
+  cursor: text !important;
+}
+.thumbnail img {
+  max-height: 300px;
+  max-width: 800px;
+}
