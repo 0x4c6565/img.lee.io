@@ -12,3 +12,59 @@ input[readonly] {
   max-height: 300px;
   max-width: 800px;
 }
+
+
+
+
+
+
+
+
+
+
+body {
+    font-family: Roboto, sans-serif;
+    color: #0f3c4b;
+    background-color: #e5edf1;
+    padding: 5rem 1.25rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 680px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.upload-box {
+    outline: 2px dashed #92b0b3;
+    outline-offset: -10px;
+    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    font-size: 1.25rem;
+    background-color: #c8dadf;
+    position: relative;
+    padding: 100px 20px;
+}
+
+.upload-box .fa-upload {
+    font-size:48px;
+}
+
+.upload-box .image-input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.upload-box .image-input-label {
+    margin:5px;
+    font-size:24px;
+}
+
+#paste-catcher {
+    display:none;
+}

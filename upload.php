@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 include_once('config.php');
 
 function get_image_extension_from_mime($mime)
@@ -44,7 +42,7 @@ function upload_file($data)
     $destination_file_name = $destination_file_guid.".".$file_extension;
     $destination_file_relative_path = "ul/".$destination_file_name;
     $destination_file_path = DOCROOT."/".$destination_file_relative_path;
-    $destination_file_url = "https://".$_SERVER['HTTP_HOST']."/".$destination_file_relative_path;
+    $destination_file_url = "https://".$_SERVER['HTTP_HOST']."/".$destination_file_name;
 
     $destination_file_stream = fopen($destination_file_path, 'w');
     $source_file_stream = fopen($data, 'r');
@@ -68,13 +66,7 @@ function pipe_streams($in, $out)
     return $size;
 }
 
-if (!check_login())
-{
-        header('HTTP/1.0 401 Unauthorized');
-        exit;
-}
-
 if (isset($_POST) && !is_null($_POST['data']))
 {
-        echo upload_file($_POST['data']);
+    echo upload_file($_POST['data']);
 }
