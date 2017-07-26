@@ -68,5 +68,13 @@ function pipe_streams($in, $out)
 
 if (isset($_POST) && !is_null($_POST['data']))
 {
-    echo upload_file($_POST['data']);
+    try
+    {
+        echo upload_file($_POST['data']);
+    }
+    catch (Exception $ex)
+    {
+        http_response_code(500);
+        echo "Failed to upload image; Message={$ex->getMessage()}";
+    }
 }

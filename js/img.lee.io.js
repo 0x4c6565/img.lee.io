@@ -15,18 +15,15 @@ $(function() {
         // Check whether clipboardData is supported
         if (e.clipboardData.items != null) {
             var items = e.clipboardData.items;
-            // Loop through all items, looking for any kind of image
             for (var i = 0; i < items.length; i++) {
-
-                // We need to represent the image as a file,
                 var file = items[i].getAsFile();
                 uploadFile(file);
             }
         } else {
 
             // If we can't handle clipboard data directly (Firefox), 
-            // we need to read what was pasted from the contenteditable element
-            setTimeout(uploadPasteCatcher, 20);
+            // we need to read what was pasted into the contenteditable element
+            uploadPasteCatcher();
         }
     }
 
@@ -41,15 +38,10 @@ $(function() {
     }
        
     function uploadPasteCatcher() {
-        // Store the pasted content in a variable
         var child = pasteCatcher.childNodes[0];
-        // Clear the inner html to make sure we're always
-        // getting the latest inserted content
         pasteCatcher.innerHTML = "";
 
         if (child) {
-            // If the user pastes an image, the src attribute
-            // will represent the image as a base64 encoded string.
             if (child.tagName === "IMG") {
                 uploadImageToServer(child.src);
             }
@@ -132,12 +124,10 @@ $(function() {
     var imageInputLabel = document.getElementById('image-input-label');
 
     imageInputLabel.onclick = function(e) {
-        console.log('test');
         imageInput.click();
     };
 
     imageInput.onchange = function(e) {
-        console.log('uploading');
         if (this.files) {
             for (var i = 0; i < this.files.length; i++) {
                 uploadFile(this.files[i]);
