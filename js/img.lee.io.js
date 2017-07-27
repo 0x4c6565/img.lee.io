@@ -24,6 +24,7 @@ $(function() {
             // If we can't handle clipboard data directly (Firefox), 
             // we need to read what was pasted into the contenteditable element
             uploadPasteCatcher();
+            //setTimeout(uploadPasteCatcher, 20);
         }
     }
 
@@ -121,9 +122,8 @@ $(function() {
     // File upload
 
     var imageInput = document.getElementById('image-input');
-    var imageInputLabel = document.getElementById('image-input-label');
 
-    imageInputLabel.onclick = function(e) {
+    uploadBox.onclick = function(e) {
         imageInput.click();
     };
 

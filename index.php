@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>img.lee.io</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/img.lee.io.css" rel="stylesheet">
 <link href="/css/font-awesome.min.css" rel="stylesheet">
