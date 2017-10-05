@@ -1,0 +1,88 @@
+input[readonly] {
+  background-color: white !important;
+  cursor: text !important;
+}
+.thumbnail img {
+  max-height: 200px;
+  max-width: 100%;
+}
+
+
+
+
+* {
+    margin:0;
+    padding:0;
+}
+
+
+html {
+    overflow:hidden;
+}
+
+a, a:visited {
+    outline:none;
+    color:#fff;
+}
+
+a:hover {
+    text-decoration:none;
+}
+
+body {
+    
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font:14px/1.3 'Raleway', sans-serif;
+    color: #fff;
+
+    overflow:hidden;
+    background-color: #75c0d1;
+}
+
+#upload-box {
+    padding: 80px;
+    width: 400px;
+    border: 3px dashed #fff;
+    border-radius: 4px;
+}
+
+#upload-box .icon {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-size: 60px;
+}
+
+#upload-box .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 18px;
+}
+
+#upload-box .image-input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+#upload-box .image-input-label {
+    margin:5px;
+}
+
+#paste-catcher {
+    display:none;
+}
+
+.upload-url {
+    font-size:12px;
+    white-space:nowrap;
+    display:inline-block;
+}
