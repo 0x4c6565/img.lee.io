@@ -110,9 +110,8 @@ $(function() {
                 data: base64,
             },
             error: function(jqXHR, textStatus) {
-                var msg = jqXHR.status + ' ' + jqXHR.statusText;
-                console.log('Upload failed: '+msg);
-                toastr.error(msg, null, {timeOut: 3000, extendedTimeOut: 1000});
+                console.log('Upload request failed; StatusCode=['+jqXHR.status+'] Message=['+jqXHR.statusText+'] ResponseText=['+jqXHR.responseText +']');
+                toastr.error(jqXHR.responseText, null, {timeOut: 3000, extendedTimeOut: 1000});
             },
             success: function(data, textStatus, jqXHR) {
                 console.log('Upload complete: '+data);
