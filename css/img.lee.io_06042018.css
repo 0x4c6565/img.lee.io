@@ -1,0 +1,225 @@
+input[readonly] {
+  background-color: white !important;
+  cursor: text !important;
+}
+.thumbnail img {
+  max-height: 200px;
+  max-width: 100%;
+}
+
+
+
+
+* {
+    margin:0;
+    padding:0;
+}
+
+
+html {
+    overflow:hidden;
+}
+
+a, a:visited {
+    outline:none;
+    color:#fff;
+}
+
+a:hover {
+    text-decoration:none;
+}
+
+body {
+    
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font:14px/1.3 'Raleway', sans-serif;
+    color: #fff;
+
+    overflow:hidden;
+    background-color: #75c0d1;
+}
+
+#upload-box {
+    padding: 80px;
+    width: 400px;
+    border: 3px dashed #fff;
+    border-radius: 4px;
+}
+
+#upload-box .icon {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-size: 60px;
+}
+
+#upload-box .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 18px;
+}
+
+#upload-box .image-input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+#upload-box .image-input-label {
+    margin:5px;
+}
+
+#paste-catcher {
+    display:none;
+}
+
+.upload-url {
+    font-size:12px;
+    white-space:nowrap;
+    display:inline-block;
+}
+
+/*Form Styles*/
+button, input, select {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit
+}
+button {
+    overflow: visible
+    -webkit-appearance: button;
+    cursor: pointer
+}
+button, select {
+    text-transform: none
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    padding: 0;
+    border: 0
+}
+input {
+    line-height: normal
+}
+/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
+
+@media print {
+    *, :after, :before {
+        color: #000!important;
+        text-shadow: none!important;
+        background: 0 0!important;
+        -webkit-box-shadow: none!important;
+        box-shadow: none!important
+    }
+}
+:after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
+}
+.form-control:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6)
+}
+.form-control::-moz-placeholder {
+    color: #999;
+    opacity: 1
+}
+.form-control:-ms-input-placeholder {
+    color: #999
+}
+.form-control::-webkit-input-placeholder {
+    color: #999
+}
+.form-control::-ms-expand {
+    background-color: transparent;
+    border: 0
+}
+.form-group {
+    margin-bottom: 15px
+}
+
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate
+}
+.input-group .form-control {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+    margin-bottom: 0
+}
+.input-group .form-control:focus {
+    z-index: 3
+}
+.input-group .form-control,
+.input-group-addon {
+    display: table-cell
+}
+.input-group-addon {
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle
+}
+.input-group-addon {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px
+}
+.input-group-addon:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0
+}
+.input-group-addon:first-child {
+    border-right: 0
+}
+.input-group .form-control:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0
+}
+@-ms-viewport {
+    width: device-width
+}
+#expire-container {
+    display: flex;
+    justify-content: center;
+}

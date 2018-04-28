@@ -62,6 +62,11 @@ $(function() {
     var imageInput = document.getElementById('image-input');
 
     uploadBox.onclick = function(e) {
+        console.log(e);
+        if (e.target.classList.contains('clickable')) {//e.target.className == 'clickable') {
+            return;
+        }
+
         imageInput.click();
     };
 
@@ -102,8 +107,9 @@ $(function() {
     function uploadImageToServer(base64) {
         console.log('Upload starting');
         toastr.info('Uploading', null, {timeOut: 2000, extendedTimeOut: 1000});
+
         $.ajax({
-            url: '/upload.php',
+            url: '/upload.php?expires='+document.getElementById('select-expire').value,
             timeout: 90000,
             type: 'POST',
             data: {
