@@ -2,41 +2,41 @@
 
 class image
 {
-	const STATUS_NEW = "NEW";
-	const STATUS_COMPLETE = "COMPLETE";
-	const STATUS_EXPIRED = "EXPIRED";
-	const STATUS_ERROR = "ERROR";
+    const STATUS_NEW = "NEW";
+    const STATUS_COMPLETE = "COMPLETE";
+    const STATUS_EXPIRED = "EXPIRED";
+    const STATUS_ERROR = "ERROR";
 
-	public $id = 0;
-	public $filename = "";
-	public $timestamp = 0;
-	public $expire_timestamp = 0;
-	public $status = STATUS_NEW;
+    public $id = 0;
+    public $filename = "";
+    public $timestamp = 0;
+    public $expire_timestamp = 0;
+    public $status = STATUS_NEW;
     public $status_message = "";
 
-	private $db = null;
+    private $db = null;
 
-	public function __construct($db)
-	{
-		$this->db = $db;
-	}
+    public function __construct($db)
+    {
+        $this->db = $db;
+    }
 
-	public static function get_expired($db)
-	{
-		$query = "SELECT id, filename, timestamp, expire_timestamp, status FROM image WHERE status <> :status AND expire_timestamp <> 0 AND expire_timestamp < :time";
-		$results = $db->execute_prepared($query, array("time"=>time(), "status"=>self::STATUS_EXPIRED), true);
+    public static function get_expired($db)
+    {
+        $query = "SELECT id, filename, timestamp, expire_timestamp, status FROM image WHERE status <> :status AND expire_timestamp <> 0 AND expire_timestamp < :time";
+        $results = $db->execute_prepared($query, array("time"=>time(), "status"=>self::STATUS_EXPIRED), true);
 
-		$image_array = array();
-		if (count($results) > 0)
-		{
-			foreach ($results as $result)
-			{
-				$image_array[] = (new image($db))->hydrate($result);
-			}
-		}
+        $image_array = array();
+        if (count($results) > 0)
+        {
+            foreach ($results as $result)
+            {
+                $image_array[] = (new image($db))->hydrate($result);
+            }
+        }
 
-		return $image_array;
-	}
+        return $image_array;
+    }
 
     public function set_status($status, $status_message = '')
     {
@@ -72,17 +72,17 @@ class image
         return STORAGE_PATH."/".$this->filename;
     }
 
-	public function hydrate($result)
-	{
-		$this->id = $result->id;
-		$this->filename = $result->filename;
-		$this->timestamp = $result->timestamp;
-		$this->expire_timestamp = $result->expire_timestamp;
-		$this->status = $result->status;
+    public function hydrate($result)
+    {
+        $this->id = $result->id;
+        $this->filename = $result->filename;
+        $this->timestamp = $result->timestamp;
+        $this->expire_timestamp = $result->expire_timestamp;
+        $this->status = $result->status;
         $this->status_message = $result->status_message;
 
-		return $this;
-	}
+        return $this;
+    }
 
     public function save()
     {
